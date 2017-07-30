@@ -6,9 +6,9 @@ var jshint = require('gulp-jshint');
 var minify = require('gulp-minifier');
 var connect = require('gulp-connect');
 var psi = require('psi');
-var site = 'https://5423fa22.ngrok.io';
+// var site = 'https://5423fa22.ngrok.io';
 // var site='http://optimisedportfolio.diveshpanwar.website/';
-//var site = 'https://diveshpanwar.github.io/optimisedPortfolioWebsite/dev/';
+var site = 'https://diveshpanwar.github.io/optimisedPortfolioWebsite/dev/';
 var key = '';
 
 //start the server
