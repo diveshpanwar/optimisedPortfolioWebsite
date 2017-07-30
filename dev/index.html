@@ -7,7 +7,7 @@
     <meta name="author" content=" FILL ME IN ">
     <title>Cameron Pittman: Portfolio</title>
     <!-- Hmm, what is the impact of web fonts on speed? Measure it... -->
-    <link defer="defer" href="//fonts.googleapis.com/css?family=Open+Sans:400,700" rel="stylesheet" media="none" onload="if(media!='all')media='all'">
+    <!-- <link defer="defer" href="//fonts.googleapis.com/css?family=Open+Sans:400,700" rel="stylesheet" media="none" onload="if(media!='all')media='all'"> -->
     <link defer="defer" href="css/style.css" rel="stylesheet" media="none" onload="if(media!='all')media='all'">
     <link defer="defer" href="css/print.css" rel="stylesheet" media="print">
 
@@ -66,5 +66,14 @@
     </script>
     <script defer="defer" src="http://www.google-analytics.com/analytics.js"></script>
     <script async src="js/perfmatters.js"></script>
+    <script defer="defer" src="https://ajax.googleapis.com/ajax/libs/webfont/1.5.18/webfont.js"></script>
+    <script defer="defer">
+     WebFont.load({
+        google: {
+          families: ['Open+Sans:400,700']
+        }
+      });
+    </script>
+
   </body>
 </html>
