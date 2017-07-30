@@ -7,8 +7,7 @@
     <meta name="author" content=" FILL ME IN ">
     <title>Cameron Pittman: Portfolio</title>
     <!-- Hmm, what is the impact of web fonts on speed? Measure it... -->
-    <!-- <link href="css/style.css" rel="stylesheet" media="none" onload="if(media!='all')media='all'"> -->
-    <link href="css/critical.css" rel="stylesheet" media="none" onload="if(media!='all')media='all'">
+    <link href="css/style.css" rel="stylesheet" media="none" onload="if(media!='all')media='all'">
     <link href="css/print.css" rel="stylesheet" media="print">
     <!-- loading fonts using the webfonts -->
     <!-- <link defer="defer" href="//fonts.googleapis.com/css?family=Open+Sans:400,700" rel="stylesheet" media="none" onload="if(media!='all')media='all'"> -->
@@ -60,21 +59,12 @@
     <script defer="defer" src="https://ajax.googleapis.com/ajax/libs/webfont/1.5.18/webfont.js"></script>
     <script async src="http://www.google-analytics.com/analytics.js"></script>
     <script async src="js/perfmatters.js"></script>
-    <script>var cb = function() {
-    var l = document.createElement('link'); l.rel = 'stylesheet';
-    l.href = 'css/app.css';
-    var h = document.getElementsByTagName('head')[0]; h.parentNode.insertBefore(l, h);
-    };
-    var raf = requestAnimationFrame || mozRequestAnimationFrame ||
-    webkitRequestAnimationFrame || msRequestAnimationFrame;
-    if (raf) raf(cb);
-    else window.addEventListener('load', cb);</script>
-        <script defer="defer">
-         WebFont.load({
-            google: {
-              families: ['Open+Sans:400,700']
-            }
-          });
+    <script defer="defer">
+     WebFont.load({
+        google: {
+          families: ['Open+Sans:400,700']
+        }
+      });
     </script>
     <script async>
       (function(w,g){w['GoogleAnalyticsObject']=g;
