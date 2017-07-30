@@ -7,7 +7,8 @@ var minify = require('gulp-minifier');
 var connect = require('gulp-connect');
 var psi = require('psi');
 // var site = 'https://100603e3.ngrok.io/';
-var site = 'https://diveshpanwar.github.io/optimisedPortfolioWebsite/dev/';
+var site='http://optimisedportfolio.diveshpanwar.website/';
+//var site = 'https://diveshpanwar.github.io/optimisedPortfolioWebsite/dev/';
 var key = '';
 
 //start the server
