@@ -6,11 +6,11 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-"repository": {
+  "repository": {
     "type": "git",
     "url": "https://github.com/diveshpanwar/optimisedPortfolioWebsite.git"
   },
-"homepage": "https://github.com/diveshpanwar/optimisedPortfolioWebsite/",
+  "homepage": "https://github.com/diveshpanwar/optimisedPortfolioWebsite/",
   "author": "divesh panwar",
   "license": "ISC",
   "devDependencies": {
@@ -20,5 +20,8 @@
     "gulp-minifier": "^0.2.2",
     "jshint": "^2.9.5",
     "psi": "^2.0.0"
+  },
+  "dependencies": {
+    "gulp-git": "^2.4.1"
   }
 }

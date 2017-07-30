@@ -6,8 +6,11 @@ var jshint = require('gulp-jshint');
 var minify = require('gulp-minifier');
 var connect = require('gulp-connect');
 var psi = require('psi');
-var site = 'https://100603e3.ngrok.io/';
+// var site = 'https://100603e3.ngrok.io/';
+var site = 'https://diveshpanwar.github.io/optimisedPortfolioWebsite/dev/';
 var key = '';
+//git variables
+var git = require('gulp-git');
 
 //start the server
 gulp.task('connect', function() {
@@ -49,6 +52,39 @@ gulp.task('watch', function() {
     gulp.watch('dev/*.html', ['minifyall','mobile','desktop']);
 });
 
+
+// Run git push
+// remote is the remote repo
+// branch is the remote branch to push to
+gulp.task('push', function(){
+  git.push('origin', 'master', function (err) {
+    if (err) throw err;
+  });
+});
+
+// Run git push
+// branch is the current branch & remote branch to push to
+gulp.task('push', function(){
+  git.push('origin', function (err) {
+    if (err) throw err;
+  });
+});
+
+// Run git push with options
+// branch is the remote branch to push to
+gulp.task('push', function(){
+  git.push('origin', 'master', {args: " -f"}, function (err) {
+    if (err) throw err;
+  });
+});
+
+// Run git push with multiple branches and tags
+gulp.task('push', function(){
+  git.push('origin', ['master'], {args: " --tags"}, function (err) {
+    if (err) throw err;
+  });
+});
+
 gulp.task('mobile', function () {
     return psi(site, {
         // key: key
@@ -70,6 +106,5 @@ gulp.task('desktop', function () {
     });
 });
 
-
 // Default Task
-gulp.task('default', ['lint','connect','watch','minifyall','desktop','mobile']);
+gulp.task('default', ['lint','connect','watch','minifyall','push','desktop','mobile']);
