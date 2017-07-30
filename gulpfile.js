@@ -107,4 +107,4 @@ gulp.task('desktop', function () {
 });
 
 // Default Task
-gulp.task('default', ['lint','connect','watch','minifyall','push','desktop','mobile']);
+gulp.task('default', ['lint','connect','watch','minifyall','desktop','mobile']);
