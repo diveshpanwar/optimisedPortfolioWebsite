@@ -6,8 +6,11 @@ var jshint = require('gulp-jshint');
 var minify = require('gulp-minifier');
 var connect = require('gulp-connect');
 var psi = require('psi');
+//site hosted on the ngrok
 // var site = 'https://5423fa22.ngrok.io';
+//actual website hosted on my personal server to boost the performance
 var site='http://optimisedportfolio.diveshpanwar.website/';
+//website hosted on the github
 // var site = 'https://diveshpanwar.github.io/optimisedPortfolioWebsite/dist/';
 var key = '';
 
@@ -48,7 +51,10 @@ gulp.task('minifyall', function() {
 gulp.task('watch', function() {
     gulp.watch('dev/js/*.js', ['lint','minifyall']);
     gulp.watch('dev/css/*.css', ['minifyall']);
-    gulp.watch('dev/*.html', ['minifyall','mobile','desktop']);
+    gulp.watch('dev/*.html', ['minifyall']);
+    gulp.watch('dev/views/js/*.js', ['lint','minifyall']);
+    gulp.watch('dev/views/css/*.css', ['minifyall']);
+    gulp.watch('dev/views/*.html', ['minifyall']);
 });
 
 gulp.task('mobile', function () {
@@ -74,4 +80,4 @@ gulp.task('desktop', function () {
 
 
 // Default Task
-gulp.task('default', ['lint','connect','watch','minifyall','desktop','mobile']);
+gulp.task('default', ['lint','connect','watch','minifyall']);

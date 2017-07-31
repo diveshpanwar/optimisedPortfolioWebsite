@@ -33,6 +33,8 @@ form {
   position: fixed;
   width: 256px;
   z-index: -1;
+  /*to give hint to the browser that the elements of this class can transform*/
+  will-change: transform;
 }
 
 .randomPizzaContainer {
