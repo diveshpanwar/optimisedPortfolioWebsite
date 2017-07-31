@@ -538,7 +538,7 @@ document.addEventListener('DOMContentLoaded', function() {
   var cols = 8;
   var s = 256;
   //reducing the number of moving pizzas as they are not needed 20-50 will suffice
-  for (var i = 0; i < 20; i++) {
+  for (var i = 0; i < 23; i++) {
     var elem = document.createElement('img');
     elem.className = 'mover';
     elem.src = "images/pizza.png";

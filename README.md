@@ -1,5 +1,5 @@
 # Optimised Portfolio Website
-### This project is about using gulp to minify the HTML, CSS and JS and to deploy the webserver. The server also watches for the changes in the files in the source files.
+### This is Project 4 for FED, It uses gulp to automate tasks. Please see the instructions for more.
 ***
 ## Features
 * Checks for changes in the html, js, and css files.
@@ -28,4 +28,45 @@
 * **lint:** It will check the js files for errors.
 * **minifyall:** It will minify all the html, js and css files.
 * **watch:** It will watch files for the changes and deploy the minifyall function.
+* **mobile:** It will display the pagespeed rank of the index.html of website for mobile.
+* **desktop:** It will display the pagespeed rank of the index.html of website for desktop.
 ***
+## Optimisations
+* ### index.html
+ * Leverage Browser Cache using .htaccess files
+ * Image Optimisations
+ * Minified Resources
+ * Defered JavaScript files
+ * Loading Scripts near the bottom
+ * Reducing the server-response time by using personal server with compression enabled.
+ * google fonts are loaded using the webfonts
+
+* ### Pizza.html
+  * Reducing the number of moving images
+  * Declaring the redundant variables with static values outside the loops for example **var dx (line 454), var newwidth (line 456), var scroller (line 514).**
+  * Reducing the unnecessary calculation like phase calculation in updatePositions functions (line 516).
+  * Image optimisation
+  * calling the updatePositions function for the first time after the window loads complete to avoid the performance bottleneck.
+
+* ### views/css/style.css
+  * adding the will-change property to the mover class.
+***
+## Guide for Reviewers
+* The readable code is available in the **dev** directory
+* The website is hosted on two locations:
+  * [GitHub](https://diveshpanwar.github.io/optimisedPortfolioWebsite/dist/)
+  * [Personal Server](http://optimisedportfolio.diveshpanwar.website/)
+* PageSpeed Score for both the urls is above 90 but the best performance is observed on the personal server.
+* For pizza.html optimisations can be found in the following functions.
+  * updatePositions
+  * changePizzaSizes
+  * document.addEventListener line 537
+* For index.html optimisations are carried using:
+  * gulpfile.js (to minify resources).
+  * header and the part just above the closing tag of the body.
+***
+## Resources
+* [will-change MDN](https://developer.mozilla.org/en/docs/Web/CSS/will-change)
+* [getElementsByClassName MDN](https://developer.mozilla.org/en-US/docs/Web/API/Document/getElementsByClassName)
+* [Google PageSpeed](https://developers.google.com/speed/docs/insights/v2/reference/pagespeedapi)
+* [npm and gulp plugins](https://www.npmjs.com/)

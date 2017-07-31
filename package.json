@@ -1,7 +1,7 @@
 {
   "name": "optimise-portfolio-website",
   "version": "1.0.0",
-  "description": "This is just a demo file for buyersgohappy.com not for public use.",
+  "description": "This is project 4 for FED.",
   "main": "gulpfile.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
