@@ -382,9 +382,8 @@ var pizzaElementGenerator = function(i) {
   pizzaImage.classList.add("img-responsive");
   pizzaImageContainer.appendChild(pizzaImage);
   pizzaContainer.appendChild(pizzaImageContainer);
-
-
-  // pizzaDescriptionContainer.style.width="65%";
+  pizzaImageContainer.style.width="35%";
+  pizzaDescriptionContainer.style.width="65%";
 
   pizzaName = document.createElement("h4");
   pizzaName.innerHTML = randomName();
@@ -434,11 +433,11 @@ var resizePizzas = function(size) {
     function sizeSwitcher (size) {
       switch(size) {
         case "1":
-          return 0.3;
+          return 0.25;
         case "2":
-          return 0.5;
+          return 0.333;
         case "3":
-          return 0.7;
+          return 0.50;
         default:
           console.log("bug in sizeSwitcher");
       }
@@ -459,6 +458,7 @@ var resizePizzas = function(size) {
     var newwidth = (allPizza[0].offsetWidth + dx) + 'px';
     //declaring the pizzaLength outside the for loop to avoid multiple calls to the allPizza.length
     var pizzaLength = allPizza.length;
+    console.log(pizzaLength);
     for (var i = 0; i < pizzaLength; i++) {
       allPizza[i].style.width = newwidth;
     }
@@ -557,4 +557,5 @@ document.addEventListener('DOMContentLoaded', function() {
     //replacing querySelector with getElementById
     document.getElementById("movingPizzas1").appendChild(elem);
   }
+  updatePositions();
 });
