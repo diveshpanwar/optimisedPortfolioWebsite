@@ -41,8 +41,10 @@
  * Reducing the server-response time by using personal server with compression enabled.
  * google fonts are loaded using the webfonts
 
-* ### Pizza.html
+* ### main.js in Pizza.html
   * Reducing the number of moving images
+  * dynamically calculating the no. of pizzas, based on browser window resolution.
+  * replacing querySelector with getElementById
   * Declaring the redundant variables with static values outside the loops for example **var dx (line 454), var newwidth (line 456), var scroller (line 514).**
   * Reducing the unnecessary calculation like phase calculation in updatePositions functions (line 516).
   * Image optimisation
@@ -50,13 +52,15 @@
 
 * ### views/css/style.css
   * adding the will-change property to the mover class.
+  * using transform: translateZ(0); to trigger gpu
+  * using backface-visibility to allow hardware acceleration
 ***
 ## Guide for Reviewers
 * The readable code is available in the **dev** directory
 * The website is hosted on two locations:
   * [GitHub](https://diveshpanwar.github.io/optimisedPortfolioWebsite/dist/)
   * [Personal Server](http://optimisedportfolio.diveshpanwar.website/)
-* PageSpeed Score for both the urls is above 90 but the best performance is observed on the personal server.
+* It is recommended to use PageSpeed Score of the website hosted on the personal webserver.
 * For pizza.html optimisations can be found in the following functions.
   * updatePositions
   * changePizzaSizes

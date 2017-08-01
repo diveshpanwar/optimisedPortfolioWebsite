@@ -33,7 +33,9 @@ form {
   position: fixed;
   width: 256px;
   z-index: -1;
-  /*to give hint to the browser that the elements of this class can transform*/
+  /*as suggested by the reviewer*/
+  transform: translateZ(0);
+  backface-visibility: hidden;
   will-change: transform;
 }
 

@@ -404,15 +404,17 @@ var resizePizzas = function(size) {
 
   // Changes the value for the size of the pizza above the slider
   function changeSliderLabel(size) {
+    //replacing querySelector with getElementById
+    var pizzaSize = document.getElementById("pizzaSize");
     switch(size) {
       case "1":
-        document.querySelector("#pizzaSize").innerHTML = "Small";
+        pizzaSize.innerHTML = "Small";
         return;
       case "2":
-        document.querySelector("#pizzaSize").innerHTML = "Medium";
+        pizzaSize.innerHTML = "Medium";
         return;
       case "3":
-        document.querySelector("#pizzaSize").innerHTML = "Large";
+        pizzaSize.innerHTML = "Large";
         return;
       default:
         console.log("bug in changeSliderLabel");
@@ -424,7 +426,8 @@ var resizePizzas = function(size) {
    // Returns the size difference to change a pizza element from one size to another. Called by changePizzaSlices(size).
   function determineDx (elem, size) {
     var oldWidth = elem.offsetWidth;
-    var windowWidth = document.querySelector("#randomPizzas").offsetWidth;
+    //replacing querySelector with getElementById
+    var windowWidth = document.getElementById("randomPizzas").offsetWidth;
     var oldSize = oldWidth / windowWidth;
 
     // Changes the slider value to a percent width
@@ -454,7 +457,9 @@ var resizePizzas = function(size) {
     var dx = determineDx(allPizza[0], size);
     //newWidth of all the pizzas will be same
     var newwidth = (allPizza[0].offsetWidth + dx) + 'px';
-    for (var i = 0; i < allPizza.length; i++) {
+    //declaring the pizzaLength outside the for loop to avoid multiple calls to the allPizza.length
+    var pizzaLength = allPizza.length;
+    for (var i = 0; i < pizzaLength; i++) {
       allPizza[i].style.width = newwidth;
     }
   }
@@ -537,9 +542,11 @@ window.addEventListener('scroll', updatePositions);
 document.addEventListener('DOMContentLoaded', function() {
   var cols = 8;
   var s = 256;
-  //reducing the number of moving pizzas as they are not needed 20-50 will suffice
-  for (var i = 0; i < 23; i++) {
-    var elem = document.createElement('img');
+  //randomly calculating the number of pizzas, based on browser window resolution.
+  var numOfPizzas = (Math.round(window.screen.height / s))*cols;
+  //declaring the elem element in the for loop initialisation
+  for (var i = 0, elem; i < numOfPizzas; i++) {
+    elem = document.createElement('img');
     elem.className = 'mover';
     elem.src = "images/pizza.png";
     elem.alt = "random Image"+i;
@@ -547,8 +554,7 @@ document.addEventListener('DOMContentLoaded', function() {
     elem.style.width = "73.333px";
     elem.basicLeft = (i % cols) * s;
     elem.style.top = (Math.floor(i / cols) * s) + 'px';
-    document.querySelector("#movingPizzas1").appendChild(elem);
+    //replacing querySelector with getElementById
+    document.getElementById("movingPizzas1").appendChild(elem);
   }
-  // Not necessary here it is creating performance bottleneck rather it can be called using window.onload in pizza.html
-  // updatePositions();
 });
