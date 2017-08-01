@@ -5,6 +5,8 @@ var gulp = require('gulp');
 var jshint = require('gulp-jshint');
 var minify = require('gulp-minifier');
 var connect = require('gulp-connect');
+// var gutil = require('gulp-util');
+// var critical = require('critical');
 var psi = require('psi');
 //site hosted on the ngrok
 // var site = 'https://5423fa22.ngrok.io';
@@ -77,7 +79,6 @@ gulp.task('desktop', function () {
         console.log('Speed score: ' + data.ruleGroups.SPEED.score);
     });
 });
-
 
 // Default Task
 gulp.task('default', ['lint','connect','watch','minifyall']);

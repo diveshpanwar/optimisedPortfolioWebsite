@@ -22,5 +22,6 @@
     "psi": "^2.0.0"
   },
   "dependencies": {
+    "critical": "^0.9.0"
   }
 }
